@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package calculadora;
+
+service CalculatorService {
+  rpc sum (TwoNumberDTO) returns (Result);
+  rpc sub (TwoNumberDTO) returns (Result);
+  rpc mul (TwoNumberDTO) returns (Result);
+  rpc div (TwoNumberDTO) returns (Result);
+  rpc lb (OneNumberDTO) returns (Result);
+  rpc log (OneNumberDTO) returns (Result);
+  rpc exp (TwoNumberDTO) returns (Result);
+  rpc sin (OneNumberDTO) returns (Result);
+  rpc cos (OneNumberDTO) returns (Result);
+  rpc sqrt (OneNumberDTO) returns (Result);
+}
+
+message TwoNumberDTO {
+  double a = 1;
+  double b = 2;
+}
+
+message OneNumberDTO {
+  double a = 1;
+}
+
+message Result{
+  double result = 1;
+  string msg = 2;
+}

@@ -10,12 +10,12 @@ import { CalculateServiceDto } from './dto/calculateService.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get() // ESTÁ EXPOSTO NA REDE
   getHello(): string {
     return this.appService.getHello();
   }
 
-  @MessagePattern('calculate')
+  @MessagePattern('calculate') // NÃO É HTTP, NÃO ESTÁ EXPOSTO NA REDE - Só no Kafka
   async calculate(data: CalculateServiceDto): Promise<CalculateResultServiceDto> {
     return await this.appService.calculate(data);
   }
