@@ -3,16 +3,16 @@ syntax = "proto3";
 package calculadora;
 
 service CalculatorService {
-  rpc sum (TwoNumberDTO) returns (Result);
-  rpc sub (TwoNumberDTO) returns (Result);
-  rpc mul (TwoNumberDTO) returns (Result);
-  rpc div (TwoNumberDTO) returns (Result);
-  rpc lb (OneNumberDTO) returns (Result);
-  rpc log (OneNumberDTO) returns (Result);
-  rpc exp (TwoNumberDTO) returns (Result);
-  rpc sin (OneNumberDTO) returns (Result);
-  rpc cos (OneNumberDTO) returns (Result);
-  rpc sqrt (OneNumberDTO) returns (Result);
+  rpc sum (TwoNumberDTO) returns (ResultDTO);
+  rpc sub (TwoNumberDTO) returns (ResultDTO);
+  rpc mul (TwoNumberDTO) returns (ResultDTO);
+  rpc div (TwoNumberDTO) returns (ResultDTO);
+  rpc lb (OneNumberDTO) returns (ResultDTO);
+  rpc log (OneNumberDTO) returns (ResultDTO);
+  rpc exp (TwoNumberDTO) returns (ResultDTO);
+  rpc sin (OneNumberDTO) returns (ResultDTO);
+  rpc cos (OneNumberDTO) returns (ResultDTO);
+  rpc sqrt (OneNumberDTO) returns (ResultDTO);
 }
 
 message TwoNumberDTO {
@@ -24,7 +24,7 @@ message OneNumberDTO {
   double a = 1;
 }
 
-message Result{
+message ResultDTO{
   double result = 1;
   string msg = 2;
 }

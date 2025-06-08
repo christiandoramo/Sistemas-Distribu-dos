@@ -13,7 +13,8 @@ import { join } from 'path';
       transport: Transport.GRPC,
       options:{
         package: 'calculadora',
-        protoPath: join(__dirname, '..','..', '..', 'proto', 'calculadora.proto')
+        protoPath: join(__dirname, '..','..', '..', 'proto', 'calculadora.proto'),
+        url: 'localhost:5000',
       },
       },
     ])

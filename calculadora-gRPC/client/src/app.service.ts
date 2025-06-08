@@ -18,6 +18,8 @@ export class AppService {
   }
 
   async sum(data:TwoNumberDTO): Promise<ResultDTO>{
+    console.log("data: ",data)
+    console.log("args: ",this.calculator.sum)
     return await firstValueFrom(this.calculator.sum(data))
   }
 }

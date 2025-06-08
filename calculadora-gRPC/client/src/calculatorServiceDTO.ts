@@ -15,7 +15,7 @@ export class OneNumberDTO {
 
 export class ResultDTO {
     @IsNumber()
-    @IsOptional()
+    // @IsOptional()
     result: number;
 
     @IsString()
